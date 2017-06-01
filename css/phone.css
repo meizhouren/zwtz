@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+.logo{display: none;}
+.head_r{display: none;}
+.head_in{background:#2F2F2F;text-align: center;}
+.head_in:after{content:"中沃投资"; font-size:26px;line-height:60px; color:#fff;} 
+#nav{height:auto; background:#c50000;}
+.nav_h{height:auto;overflow: hidden;}
+.nav_in{height:auto;overflow: hidden; font-size: 18px;}
+.nav_in a{color:#fff; height:auto;}
+.nav_in a:hover{background:none;}
+.nav_in li{line-height:40px; width:80px;}
+.nav_in ul{width: 100%;}
+.icon1{display: none;}
+.icon2{display: none;}
+.icon3{display: none;}
+.con_boder1{width: 100%;}
+.con_boder2{width: 100%;}
+.con_boder3{width: 100%;}
+.con_lf_btm p{width: 100%; float: none; line-height: 20px;}
+.con_lf_btm img{margin:10px;}
+.con_lf_top .p1{color:#c50000;}
+.con_rg_top .p1{color:#c50000;}
+.con_btm_top .p1{color:#c50000;}
+.footer_down{display: none;}
+#footer{height:auto;}
+.con_rg_btm dl{margin-bottom: 0; margin-top: 10px;}
+
+
+
+/*----------------- list----------------------------- */
+.list_sidebar{display: none;}
+.list_main{width: 100%; margin-bottom:20px;}
+.list_main span{width:100%; margin: 0 auto; padding-top:30px; text-align: center;}
+
+/* detail */
+.detail_con_footer{width:100%; margin:0 auto; text-align: center;}
+.list_con_btm{margin-top:0; padding-top:10px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

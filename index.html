@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>中沃投资</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<link type="text/css" rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="./css/pad.css" media="(max-width:980px)">
+<link rel="stylesheet" type="text/css" href="./css/phone.css" media="(max-width:620px)">
+<script src="./js/jquery-1.7.2.min.js"></script>
+<script>
+$(function(){	
+	$('.nav_in li a').hover(function(e) {
+        $(this).addClass('current').parent().siblings().children('a').removeClass('current')
+    },function(){	
+        $('.nav_in li a').removeClass('current')
+	});
+	
+	var timer=null;
+	var num=0;
+	
+	clearInterval(timer)
+	function goto(){	
+		timer=setInterval(function(){	
+			num++
+			if(num>2){num=0}
+			$('.banner_img').stop().animate({left:-1920*num})
+			$('.baner_dot li').eq(num).addClass('current').siblings().removeClass()
+		},3000)
+	}
+	goto()
+	
+	$('.baner_dot li').hover(function(e) {
+      	clearInterval(timer) 
+		index=$(this).index()
+		num=index
+		$(this).addClass('current').siblings().removeClass()
+		$('.banner_img').stop().animate({left:-1920*num}) 
+    },function(){	
+		clearInterval(timer)
+		goto()
+	});
+	$('#banner').hover(function(e) {
+      	clearInterval(timer) 
+    },function(){	
+		clearInterval(timer)
+		goto()
+	});
+	
+	$('.con_btm_btm li').hover(function(e) {
+        $(this).stop().fadeTo(200,1).siblings().stop().fadeTo(200,0.7)
+    },function(){	
+		$('.con_btm_btm li').stop().fadeTo(200,1)
+	});
+	
+	$('.con_btm_btm>a:eq(0)').hover(function(e) {
+		$(this).css('background','url(images/indexarrow_13.png)')
+	},function(){	
+		$('.con_btm_btm>a:eq(0)').css('background','url(images/indexarrow_13.png)')
+	});
+
+	$('.con_btm_btm>a:eq(0)').click(function(e) {
+		$('.con_btm_btm ul').animate({left:-280})
+    });
+	$('.con_btm_btm>a:eq(1)').click(function(e) {
+		$('.con_btm_btm ul').animate({left:0})
+    });
+
+	$('.con_btm_btm>a:eq(1)').hover(function(e) {
+		$(this).css('background','url(images/indexarrow1_16.png)')
+	},function(){	
+		$('.con_btm_btm>a:eq(1)').css('background','url(images/indexarrow_16.png)')
+	});
+
+
+})
+</script>
+<script type="text/javascript">
+$(function(){	
+	$('.all ol li').click(function(e) {
+        $(this).addClass('current').siblings().removeClass();//完成角标的工作
+		
+		$('.all ul li').eq($(this).index()).hide().stop().fadeIn().siblings().hide()
+		
+		num=$(this).index();
+    });
+
+	var num=0;
+	var timer=null;
+	
+	timer=setInterval(fn,1000)
+	
+	function fn(){	
+		num++
+		if(num>4){num=0}
+		//$('title').html(num)
+		
+        $('.all ol li').eq(num).addClass('current').siblings().removeClass();//完成角标的工作
+		$('.all ul li').eq(num).stop().hide().fadeIn().siblings().hide()
+	}
+})
+</script>
+</head>
+
+<body>
+	<div id="header">
+    	<div class="head_in">
+            <h1 class="logo">
+                <a href="http://ui1688.com/web/zwtz/index.html">
+                    <img src="./images/logo1.png" width="199" height="57" alt="">
+                </a>
+            </h1>
+            <span class="head_r">
+            <a class="a1" href="http://ui1688.com/web/zwtz/index.html###">立即收藏</a>
+            <a href="http://ui1688.com/web/zwtz/index.html###">登录</a>
+            <a href="http://ui1688.com/web/zwtz/index.html###">注册</a>
+            </span>
+        </div>
+    </div>
+    
+	<div id="nav">
+		<div class="nav_h">
+            <ul class="nav_in">
+               <li>
+               <a href="http://ui1688.com/web/zwtz/index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+              </li>
+               <li><a href="http://ui1688.com/web/zwtz/index.html###">公司简介</a></li>
+               <li><a href="http://ui1688.com/web/zwtz/index.html###">合作伙伴</a></li>
+               <li><a href="http://ui1688.com/web/zwtz/list.html">新闻中心</a></li>
+               <li><a href="http://ui1688.com/web/zwtz/index.html###">加入我们</a></li>
+               <li><a href="http://ui1688.com/web/zwtz/index.html###">联系我们</a></li>
+           </ul>
+           </div>
+   	   </div>
+    
+    <div id="banner">
+    	<ul class="banner_img">
+    		<li><img src="./images/banner2.png" width="1920" height="450" alt=""></li>
+    		<li><img src="./images/banner.1.jpg" width="1920" height="450" alt=""></li>
+    		<li><img src="./images/banner.jpg" width="1920" height="450" alt=""></li>
+    		<li><img src="./images/banner2.png" width="1920" height="450" alt=""></li>
+    		<li><img src="./images/banner.1.jpg" width="1920" height="450" alt=""></li>
+    	</ul>
+        <ol class="baner_dot">
+            <li class=""></li>
+            <li class=""></li>
+            <li class="current"></li>
+        </ol>
+    </div>
+    
+	<div id="all">
+	<img src="./images/banner2.png" width="1920" height="450" alt="">
+</div>
+
+	
+    <div id="conten">
+	<div class="conten_top">
+     <div class="left">
+   	   <div class="con_lf_top">
+            <div class="icon1"></div>
+            <div class="con_boder1">
+                <div class="title">
+                    <p class="p1">公司简介</p>
+                    <p class="p2">COMPANY PROFILE</p>
+                </div>
+                    <a href="http://ui1688.com/web/zwtz/index.html###">更多</a>
+            </div>
+        </div>
+     	<div class="con_lf_btm">
+            <img src="./images/con_img01.jpg" width="232" height="237" alt="">
+			<p>xx是一家市场化运作的股权投资基金管理机构，专注于优秀股权投资基金的组合投资和优质企业的直接投资。我们的核心团队成员来自国内最有影响力的投资机构，如，复星集团、松禾资本、纪源资本、平安集团等，具有丰富的股权投资和资产管理经验，曾管理十余只股权投资基金及组合基金，管理的资金规模超过30亿元，投资企业逾40家，其中超过30%的企业已上市，包含行业的领导者、世界先进技术的开发者，创造了出色回报。<br>
+&nbsp;&nbsp;有着专业投资队伍，由经验丰富的投资专家、财务专家、经营专家团队组成，人脉资源广泛，熟悉各种资源协调之道。中沃通过帮助企业提高市盈率和竞争能力...... <a href="http://ui1688.com/web/zwtz/index.html###">[详情]</a></p>
+            
+       </div>
+     </div>
+     
+     <div class="right">
+     	<div class="con_rg_top">
+            <div class="icon2"></div>
+            <div class="con_boder2">
+                <div class="title">
+                    <p class="p1">新闻中心</p>
+                    <p class="p2">NEWS CENTER</p>
+                </div>
+                    <a href="http://ui1688.com/web/zwtz/list.html">更多</a>
+            </div>
+        </div>
+     	<div class="con_rg_btm">
+        	<dl>
+        		<dt><a href="http://ui1688.com/web/zwtz/list.html"><img src="./images/con_img_r3_c1.jpg" width="104" height="68" alt=""></a></dt>
+        		<dd>
+                	<h2 class="title"><a href="http://ui1688.com/web/zwtz/detail.html">股市大跌时 这5种做法会让你亏得更惨</a></h2>
+                    <p>24日大盘跌破年线后，直接引发了多杀多技术抛盘，这也让大盘在盘中丝毫没有一丝像样反弹，个股更是一片跌停哀鸿遍野，空方杀跌可谓达到疯狂。</p>
+                    <a class="more" href="http://ui1688.com/web/zwtz/list.html">[详情]</a>
+                </dd>
+        	</dl>
+        	<dl>
+        		<dt><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/con_img02.jpg" width="104" height="68" alt=""></a></dt>
+        		<dd>
+                	<h2 class="title"><a href="http://ui1688.com/web/zwtz/list.html">融资中，被投资人打击了咋整？</a></h2>
+                    <p>投资人是一个绕不过去的话题，比如被投资人否定了该怎么办，投资人的建议都是正确的吗，创业者该坚持怎样的价值观？看看投资人是怎么看待投资人的...</p>
+                    <a class="more" href="http://ui1688.com/web/zwtz/list.html">[详情]</a>
+                </dd>
+        	</dl>
+        
+        	<dl>
+        		<dt><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/con_img_r1_c1.jpg" width="104" height="68" alt=""></a></dt>
+        		<dd>
+                	<h2 class="title"><a href="http://ui1688.com/web/zwtz/index.html###">美团与大众点评合并两天后，饿了么说，还会死磕美团</a></h2>
+                    <p>10日张旭豪发出内部信，向员工解释了各家的关系：饿了么不参与这起合并事件并将独立发展，同时还会与美团外卖及所有外卖平台继续竞争“他们变，我们不变”。</p>
+                    <a class="more" href="http://ui1688.com/web/zwtz/index.html###">[详情]</a>
+                </dd>
+        	</dl>
+        
+        
+        </div>     
+     </div>
+    </div>
+	
+    <div class="conten_btm">
+     	<div class="con_btm_top">
+            <div class="icon3"></div>
+            <div class="con_boder3">
+                <div class="title">
+                    <p class="p1">投资领域</p>
+                    <p class="p2">INVESMENT AREA</p>
+                </div>
+                    <a href="http://ui1688.com/web/zwtz/index.html###">更多</a>
+        	</div>
+        </div>
+     	<div class="con_btm_btm">
+        	<a class="arrow1" href="http://ui1688.com/web/zwtz/index.html###"></a>
+            <div class="con08_in">
+            <ul>
+        		<li class="li1" style="opacity: 1;"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_03.png" width="203" height="203" alt=""></a></li>
+        		<li class="li2" style="opacity: 1;"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_05.png" width="203" height="203" alt=""></a></li>
+        		<li class="li3" style="opacity: 1;"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_07.png" width="203" height="203" alt=""></a></li>
+        		<li class="li4" style="opacity: 1;"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_10.png" width="203" height="203" alt=""></a></li>
+        		<li class="li1" style="opacity: 1;"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_03.png" width="203" height="203" alt=""></a></li>
+        	</ul>
+            </div>
+        	<a class="arrow2" href="http://ui1688.com/web/zwtz/index.html###"></a>
+        </div>         
+     	<div class="pad_con">
+            <ul>
+        		<li class="li1"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_03.png" width="203" height="203" alt=""></a></li>
+        		<li class="li2"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_05.png" width="203" height="203" alt=""></a></li>
+        		<li class="li3"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_07.png" width="203" height="203" alt=""></a></li>
+        		<li class="li4"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_10.png" width="203" height="203" alt=""></a></li>
+        		<li class="li1"><a href="http://ui1688.com/web/zwtz/index.html###"><img src="./images/footer_img_03.png" width="203" height="203" alt=""></a></li>
+        	</ul>
+        </div>         
+  </div>
+</div>
+
+
+	<div id="footer">
+	<div class="fot_top">
+    	<p><a href="http://ui1688.com/web/zwtz/index.html">网站首页</a> | <a href="http://ui1688.com/web/zwtz/index.html###">网站地图</a> | <a href="http://ui1688.com/web/zwtz/index.html###">公司简介</a> | <a href="http://ui1688.com/web/zwtz/index.html###">联系我们</a></p>
+    </div>
+    <div class="footer_btm">
+    	<div class="footer_logo"><a href="http://ui1688.com/web/zwtz/index.html###"></a></div>
+        <dl>
+        	<dt>公司简介</dt>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">公司详情</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">合作伙伴</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html">返回首页</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">加入我们</a></dd>
+        </dl>
+        <dl>
+        	<dt>服务与支持</dt>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">投诉与建议</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">常见问题</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">订单查询</a></dd>
+        </dl>
+        <dl>
+        	<dt>联系我们</dt>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">售后服务</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">投诉与建议</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">联系电话</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">企业邮箱</a></dd>
+        </dl>
+        <dl>
+        	<dt>网站首页</dt>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">公司简介</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">合作伙伴</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/list.html">新闻中心</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">加入我们</a></dd>
+        	<dd><a href="http://ui1688.com/web/zwtz/index.html###">联系我们</a></dd>
+        </dl>
+        
+        <div class="fot_link">
+        	<dl class="link01">
+        		<dt>关注我们</dt>
+        		<dd><a class="icons1" href="http://ui1688.com/web/zwtz/index.html###"></a> <a class="icons2" href="http://ui1688.com/web/zwtz/index.html###"></a></dd>
+        	</dl>
+        	<dl class="link02">
+        		<dt>联系我们</dt>
+        		<dd>
+                 <a class="icons3" href="http://ui1688.com/web/zwtz/index.html###"></a>
+                 <a class="icons4" href="http://ui1688.com/web/zwtz/index.html###"></a>
+                 <a class="icons5" href="http://ui1688.com/web/zwtz/index.html###"></a>
+                 <a class="icons6" href="http://ui1688.com/web/zwtz/index.html###"></a>
+                 </dd>
+        	</dl>
+        </div>
+    </div>
+    <p class="footer_down">Copyright © 版权所有：沪ICP备15xxxxxx号 All Rights Reserved</p>
+</div>
+
+
+
+
+
+
+
+
+
+</body></html>
